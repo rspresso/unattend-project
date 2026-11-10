@@ -55,24 +55,6 @@ copy unattend.xml C:\Windows\Panther\unattend.xml
 
 ---
 
-## ⚙️ 커스텀 배치(CMD) 추가 방법
-
-`unattend.xml` 파일 하단의 `Custom-Setup.cmd` 태그 내 `<![CDATA[` 와 `]]>` 사이에 원하는 CMD 명령어들을 추가하시면 됩니다:
-
-```xml
-<File path="C:\Windows\Setup\Scripts\Custom-Setup.cmd"><![CDATA[@echo off
-setlocal EnableExtensions
-
-:: 여기에 실행할 명령어를 추가하세요.
-echo [INFO] Running custom setup tasks...
-
-endlocal
-exit /b 0
-]]></File>
-```
-
----
-
 ## 📄 라이선스 (License)
 
 이 프로젝트는 **GNU General Public License v3.0 (GPL-3.0)** 하에 배포됩니다.  
