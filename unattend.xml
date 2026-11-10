@@ -3512,7 +3512,7 @@ if ($UserCustomizations) {
 
             # PowerShell script for: DNS Server
             try {
-                Get-NetAdapter | ForEach-Object { Set-DnsClientServerAddress -InterfaceIndex $_.InterfaceIndex -ServerAddresses @('1.1.1.2','1.0.0.2') }
+                Get-NetAdapter | ForEach-Object { Set-DnsClientServerAddress -InterfaceIndex $_.InterfaceIndex -ServerAddresses @('94.140.14.14','94.140.15.15') }
                 Write-Log "Select a DNS server for all network adapters. Changes apply to every adapter on your system (Wi-Fi and Ethernet). Use Automatic to restore your default ISP/router DNS" "SUCCESS"
             } catch {
                 Write-Log "Failed: Select a DNS server for all network adapters. Changes apply to every adapter on your system (Wi-Fi and Ethernet). Use Automatic to restore your default ISP/router DNS - $($_.Exception.Message)" "ERROR"
@@ -3521,7 +3521,7 @@ if ($UserCustomizations) {
 
             # PowerShell script for: DNS Server
             try {
-                $known = @('1.1.1.1','1.0.0.1','8.8.8.8','8.8.4.4','9.9.9.9','149.112.112.112'); foreach ($s in $known) { netsh dns delete encryption server=$s 2>$null | Out-Null }; $t = '{{dohtemplate}}'; if ($t -and $t -notmatch '^\{\{') { netsh dns add encryption server=1.1.1.2 dohtemplate=$t autoupgrade=yes udpfallback=no | Out-Null; netsh dns add encryption server=1.0.0.2 dohtemplate=$t autoupgrade=yes udpfallback=no | Out-Null }
+                $known = @('1.1.1.1','1.0.0.1','8.8.8.8','8.8.4.4','9.9.9.9','149.112.112.112'); foreach ($s in $known) { netsh dns delete encryption server=$s 2>$null | Out-Null }; $t = '{{dohtemplate}}'; if ($t -and $t -notmatch '^\{\{') { netsh dns add encryption server=94.140.14.14 dohtemplate=$t autoupgrade=yes udpfallback=no | Out-Null; netsh dns add encryption server=94.140.15.15 dohtemplate=$t autoupgrade=yes udpfallback=no | Out-Null }
                 Write-Log "Select a DNS server for all network adapters. Changes apply to every adapter on your system (Wi-Fi and Ethernet). Use Automatic to restore your default ISP/router DNS" "SUCCESS"
             } catch {
                 Write-Log "Failed: Select a DNS server for all network adapters. Changes apply to every adapter on your system (Wi-Fi and Ethernet). Use Automatic to restore your default ISP/router DNS - $($_.Exception.Message)" "ERROR"
