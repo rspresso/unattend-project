@@ -1,0 +1,33 @@
+# OS generated files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+Desktop.ini
+$RECYCLE.BIN/
+
+# Windows shortcut & temp
+*.lnk
+*.tmp
+*.temp
+*~
+~$*
+
+# Editor & IDE directories
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+_tmp.log
+_Debug.log
+
+# Temporary test scripts
+*.bak
+scratch/
+test_*.ps1
